@@ -1,8 +1,11 @@
-//include project name and project description
+//GET - includes project name and project description
 
 //GET (FIND)
-function find() {
-    return db("tasks");
+function find(id) {
+    return db("tasks")
+    .select("tasks.id","tasks.task_description")
+    .join("projects", "projects.id", "projects.project_name","projects.project_description")
+    .where( "tasks.",id)
 }
 
 

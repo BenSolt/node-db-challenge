@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const schemeData = req.body;
 
-  Resources.add(schemeData)  // <--- add - in conjuction with resources-model file.
+  Resources.add(schemeData)  // <--- .add - in conjuction with resources-model file.
   .then(resource => {
     res.status(201).json(resource);
   })

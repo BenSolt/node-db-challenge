@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const schemeData = req.body;
 
-  Tasks.add(schemeData)  // <--- add - in conjuction with tasks-model file.
+  Tasks.add(schemeData)  // <--- .add - in conjuction with tasks-model file.
   .then(task => {
     res.status(201).json(task);
   })
