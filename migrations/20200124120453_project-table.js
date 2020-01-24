@@ -13,12 +13,12 @@ exports.up = function(knex) {
     .createTable('resources', tbl => {
         tbl.increments();
         tbl.text('resource_name')
-          .unsigned()
-          .notNullable()
-          .references('id')
-          .inTable('projects')
-          .onUpdate('CASCADE')
-          .onDelete('CASCADE');
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('projects')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
 	tbl.text('resource_description');
 	})
 
@@ -28,13 +28,17 @@ exports.up = function(knex) {
         tbl.text('task_description')
           .unsigned()
           .notNullable()
- 	  .references('id')
-          .inTable('projects')
-          .onUpdate('CASCADE')
-          .onDelete('CASCADE');
 	tbl.text('notes');
 	tbl.boolean('completed').defaultTo(false);
-	})
+    tbl.integer('project_id')
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('projects')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
+    })
+
 }
 
 exports.down = function(knex) {

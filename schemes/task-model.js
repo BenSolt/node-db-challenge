@@ -4,8 +4,8 @@
 function find(id) {
     return db("tasks")
     .select("tasks.id","tasks.task_description")
-    .join("projects", "projects.id", "projects.project_name","projects.project_description")
-    .where( "tasks.",id)
+    .join("projects", "projects.id", "project.project_name","projects.project_description")
+    .where( "tasks.project_id",id)
 }
 
 
