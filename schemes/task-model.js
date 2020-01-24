@@ -28,7 +28,7 @@ function findtasks(id) {
 //POST (CREATE)
 function add(task) {
     return db("tasks").insert(task)
-    .then(([id]) => {
-        return findById(id);
-    });
+    // .then(([id]) => {
+    //     return findById(id);
+    // });
 }
