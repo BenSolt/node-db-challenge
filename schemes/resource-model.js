@@ -1,11 +1,12 @@
 //GET (FIND)
 function find() {
-    return db("projects");
+    return db("resources");
 }
 
+
 //POST (CREATE)
-function add(project) {
-    return db("projects").insert(project)
+function add(resource) {
+    return db("resources").insert(resource)
     .then(([id]) => {
         return findById(id);
     });

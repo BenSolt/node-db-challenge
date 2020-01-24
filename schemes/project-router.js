@@ -1,6 +1,6 @@
 const express = require('express');
 
-const Projects = require('./projects-model');
+const Projects = require('./project-model');
 
 const router = express.Router();
 
@@ -39,7 +39,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   const schemeData = req.body;
 
-  Projects.add(schemeData)  // <--- add - in conjuction with projects-model file.
+  Projects.add(schemeData)  // <--- add - in conjuction with project-model file.
   .then(scheme => {
     res.status(201).json(scheme);
   })
