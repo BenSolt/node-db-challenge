@@ -1,6 +1,6 @@
 const express = require('express');
 
-const Tasks = require('./task-model');
+const Tasks = require('./task-model.js');
 
 const router = express.Router();
 
