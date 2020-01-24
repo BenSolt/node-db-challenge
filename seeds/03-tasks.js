@@ -1,6 +1,6 @@
 
 exports.seed = function(knex) {
-    return knex('resources').insert([
+    return knex('tasks').insert([
     {
         task_description: 'open vs code, make react app, add redux, authorization key',
         notes: 'take a break now and then from coding',

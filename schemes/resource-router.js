@@ -28,3 +28,5 @@ router.post('/', (req, res) => {
     res.status(500).json({ message: 'Failed to create new resource' });
   });
 });
+
+module.exports = router;

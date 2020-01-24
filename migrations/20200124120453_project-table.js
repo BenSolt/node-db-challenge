@@ -15,10 +15,7 @@ exports.up = function(knex) {
         tbl.text('resource_name')
         .unsigned()
         .notNullable()
-        .references('id')
-        .inTable('projects')
-        .onUpdate('CASCADE')
-        .onDelete('CASCADE');
+      
 	tbl.text('resource_description');
 	})
 
